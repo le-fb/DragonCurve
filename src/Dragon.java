@@ -1,23 +1,24 @@
-import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-public class Dragon extends JPanel{
-	private ArrayList<Point> points;
-	private int sideLength = 4;
+public class Dragon extends JComponent{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2169502447064907145L;
+	private int sideLength = 1;
 	private int defaultDirection;
 	private int direction;
 	private Point start;
 	private int iteration;
 	private int height = 850;
 	private int width = 1150;
-	private JFrame frame;
 	private ArrayList<Character> turns;
 	private Color color;
 	
@@ -31,6 +32,7 @@ public class Dragon extends JPanel{
 	@Override
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
+		
 		ArrayList<ArrayList<Integer>> xy = getIterationPoints(iteration);
 		int[] x = new int[xy.get(0).size()];
 		int[] y = new int[xy.get(0).size()];
